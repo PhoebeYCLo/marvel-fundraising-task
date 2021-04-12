@@ -1,7 +1,7 @@
 import React from 'react';
 import './donatehero.scss';
 
-function donateHero() {
+function DonateHero() {
     return(
         <div className="donatehero">
             <div className="donatehero__content container">
@@ -12,4 +12,4 @@ function donateHero() {
     )
 }
 
-export default donateHero;
+export default DonateHero;
