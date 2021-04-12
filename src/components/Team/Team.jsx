@@ -20,29 +20,29 @@ function Team() {
     const blackwidowidURL = "http://gateway.marvel.com/v1/public/characters/1009189?ts=1&apikey=bfea369635741a24dd07bc483f6eca66&hash=8beb9b74b87efe26d77dd9c490afedb2";
 
 
-    // Get avengers data from marvel api call
+    // Get hero data from marvel api call
 
     const requestOne = axios.get(ironManURL);
     const requestTwo = axios.get(blackwidowidURL);
     const requestThree = axios.get(spiderManURL);
     const requestFour = axios.get(captainMarvelURL);
 
-    // useEffect(() => {
-    //     axios
-    //     .all([requestOne, requestTwo, requestThree, requestFour])
-    //     .then(
-    //         axios.spread((...responses) => {
-    //         const responseOne = setHeros(heros => [...heros, responses[0].data.data.results]);
-    //         const responseTwo = setHeros(heros => [...heros, responses[1].data.data.results]);
-    //         const responesThree = setHeros(heros => [...heros, responses[2].data.data.results]);
-    //         const responesFour = setHeros(heros => [...heros, responses[3].data.data.results]);
-    //         })
-    //     )
-    //     .catch(errors => 
-    //         console.error(errors)
-    //     )
-    // },
-    // []);
+    useEffect(() => {
+        axios
+        .all([requestOne, requestTwo, requestThree, requestFour])
+        .then(
+            axios.spread((...responses) => {
+            const responseOne = setHeros(heros => [...heros, responses[0].data.data.results]);
+            const responseTwo = setHeros(heros => [...heros, responses[1].data.data.results]);
+            const responesThree = setHeros(heros => [...heros, responses[2].data.data.results]);
+            const responesFour = setHeros(heros => [...heros, responses[3].data.data.results]);
+            })
+        )
+        .catch(errors => 
+            console.error(errors)
+        )
+    },
+    []);
     
     // console.log(heros);
     return(
