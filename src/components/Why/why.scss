@@ -39,6 +39,10 @@
         &--right{
             @include breakpoint ('desktop') {
                 width: 70%;
+                margin-left: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
         }
 
@@ -56,6 +60,8 @@
             @include type('p', 'phone');
 
             @include breakpoint ('table') {
+                text-align: center;
+                max-width: 650px;
                 @include type('p', 'table'); 
             }
         }
