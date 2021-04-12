@@ -3,24 +3,24 @@ import React, { Component } from 'react';
 class DonateButton extends Component{
     constructor(props) {
         super(props);
-    
+
         this.state = {
-          donateSelection: 'monthly',
-          active: false
+            donateSelection: 'monthly',
+            active: false
         }
-    
-      }
-    
-      toggleContent = (event) => {
+
+    }
+
+    toggleContent = (event) => {
         const currentState = this.state.active;
         event.preventDefault();
         this.setState({
-          donateSelection: event.target.value,
-          active: !currentState
+            donateSelection: event.target.value,
+            active: !currentState
         })
-      }
-    
-      switchContent = (value) => {
+    }
+
+    switchContent = (value) => {
         switch (value) {
             case 'monthly':
             return <div>
@@ -37,6 +37,7 @@ class DonateButton extends Component{
                     <button className="btn__dormant" value="50">$50</button>
                     <button className="btn__dormant" value="75">$75</button>
                 </div>
+                <hr className="linebreak"></hr>
             </div>;
             case 'onetime':
             return <div>
@@ -53,24 +54,25 @@ class DonateButton extends Component{
                     <button className="btn__dormant" value="75">$75</button>
                     <button className="btn__dormant" value="100">$100</button>
                 </div>
+                <hr className="linebreak"></hr>
             </div>;
             default:
             return null;
         }
-      }
-    
-      render() {
+    }
+
+    render() {
         const { donateSelection } = this.state;
         const { active } = this.state;
-    
+
         return (
-          <div className="container-fluid payment-btn-group">
+            <div className="container-fluid payment-btn-group">
             <button outline className={donateSelection ==='monthly' ? 'btn__active' : 'btn__dormant'} color="secondary" value="monthly" onClick={this.toggleContent} >Monthly</button>
             <button outline className={donateSelection ==='onetime' ? 'btn__active' : 'btn__dormant'} color="secondary" value="onetime" onClick={this.toggleContent} >One Time</button>
             {this.switchContent(donateSelection)}
-          </div>
+            </div>
         );
-      }
+    }
 }
 
 export default DonateButton;

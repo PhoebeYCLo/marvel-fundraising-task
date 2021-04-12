@@ -1,6 +1,7 @@
 import React from 'react';
 import './donatepage.scss';
 import DonateButton from './DonateButton';
+import DonateBilling from './DonateBilling';
 
 function DonatePage() {
     return(
@@ -12,7 +13,7 @@ function DonatePage() {
                         <DonateButton />
                     </div>
                     <div className="donatepage__bottom">
-
+                        <DonateBilling />
                     </div>
                 </div>
             </div>

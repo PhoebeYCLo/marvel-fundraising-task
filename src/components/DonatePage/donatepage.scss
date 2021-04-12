@@ -57,4 +57,29 @@
     &__list{
         color: #353535;
     }
+
+    &__row-wrapper{
+        display: flex;
+    }
+
+    &__billing{
+        &-element{
+            margin: 0.6rem 0.8rem;
+            flex: 1;
+        }
+
+        &-label{
+            width: 18rem;
+            display: block;
+        }
+
+        &-item{
+            background-color: transparent;
+            border: 0px solid;
+            border-bottom: 1px solid #1B313E;
+            width: 100%;
+            padding: 0.8rem 0.2rem;
+            font-size: 0.8rem;
+        }
+    }
 }
