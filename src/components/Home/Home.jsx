@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Hero from '../Hero/Hero';
-import Team from '../Team/Team';
 import Why from '../Why/Why';
+import Team from '../Team/Team';
+import Newsletter from '../Newsletter/Newsletter';
+import DonateHero from '../DonateHero/DonateHero';
 
 class Home extends Component{
     render() {
@@ -10,6 +12,8 @@ class Home extends Component{
                 <Hero />
                 <Why />
                 <Team />
+                <Newsletter />
+                <DonateHero />
             </>
         )
     }
