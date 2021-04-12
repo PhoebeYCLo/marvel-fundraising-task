@@ -7,8 +7,8 @@
 }
 
 .btn{
-    &__primary{
-        background-color: #EF3D23;
+    &__primary,
+    &__secondary{
         color: #FFFFFF;
         border: none;
         padding: 1rem 1.5rem;
@@ -18,8 +18,21 @@
         max-width: 250px;
     }
 
+    &__primary{
+        background-color: #EF3D23;
+    }
+
     &__primary:hover{
         background-color: #B60201;
+        cursor: pointer;
+    }
+
+    &__secondary{
+        background-color: #1B313E;
+    }
+
+    &__secondary:hover{
+        background-color: #09212F;
         cursor: pointer;
     }
 }
