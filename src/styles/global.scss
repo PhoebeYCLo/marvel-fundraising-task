@@ -13,7 +13,9 @@ a {
 
 .btn{
     &__primary,
-    &__secondary{
+    &__secondary,
+    &__active,
+    &__dormant{
         color: #FFFFFF;
         border: none;
         padding: 1rem 1.5rem;
@@ -21,6 +23,13 @@ a {
         font-weight: 700;
         border-radius: 5px;
         max-width: 250px;
+    }
+
+    &__primary:focus,
+    &__secondary:focus,
+    &__active:focus{
+        border: none;
+        outline: none;
     }
 
     &__primary{
@@ -39,6 +48,17 @@ a {
     &__secondary:hover{
         background-color: #09212F;
         cursor: pointer;
+    }
+
+    &__active{
+        background-color: #1B313E;
+        margin: 0 0.5rem;
+    }
+
+    &__dormant{
+        color: #1B313E;
+        border: 2px solid #1B313E;
+        background-color: transparent;
     }
 }
 
