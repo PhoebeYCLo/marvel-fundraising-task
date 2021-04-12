@@ -1,0 +1,55 @@
+@import '../../styles/global.scss';
+
+.newsletter{
+    background-color: #1B313E;
+    padding: 2rem 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint ('table') {
+        flex-direction: row;
+    }
+
+    &__header{
+        @include type('h3', 'phone');
+        color: #FFFFFF;
+        margin-bottom: 1rem;
+
+        @include breakpoint ('table') {
+            @include type('h3', 'table'); 
+        }
+    }
+
+    &__container{
+        @include breakpoint ('table') {
+            margin-left: 2rem;
+        }
+    }
+
+    &__form{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        @include breakpoint ('table') {
+            flex-direction: row;
+        }
+    }
+
+    &__input{
+        height: 53px;
+        min-width: 250px;
+        margin-bottom: 1rem;
+
+        @include breakpoint ('table') {
+            margin-right: 1rem;
+        }
+    }
+
+    &__btn{
+        height: 53px;
+    }
+}
