@@ -12,8 +12,8 @@
         margin: 0 10px;
         
         @include breakpoint ('desktop') {
-            width: 50%;
-            margin-left: 5rem;
+            width: 60%;
+            margin: 0 auto;
         }
     }
 
@@ -35,7 +35,7 @@
 
     &__title{
         text-transform: uppercase;
-        margin-top: 1rem;
+        margin: 1rem 0;
         @include type('h3', 'phone');
         
         @include breakpoint ('table') {
@@ -59,7 +59,9 @@
     }
 
     &__row-wrapper{
-        display: flex;
+        @include breakpoint ('table') {
+            display: flex;
+        }
     }
 
     &__billing{
@@ -81,5 +83,9 @@
             padding: 0.8rem 0.2rem;
             font-size: 0.8rem;
         }
+    }
+
+    &__btn{
+        margin-top: 1rem;
     }
 }

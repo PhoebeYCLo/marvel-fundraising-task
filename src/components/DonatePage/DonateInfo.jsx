@@ -1,24 +1,92 @@
 import React, { Component } from 'react';
 
-class DonateBilling extends Component{
+class DonateInfo extends Component{
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            donateSelection: 'monthly',
+            active: false
+        }
+
+    }
+
+    toggleContent = (event) => {
+        const currentState = this.state.active;
+        event.preventDefault();
+        this.setState({
+            donateSelection: event.target.value,
+            active: !currentState
+        })
+    }
+
+    switchContent = (value) => {
+        switch (value) {
+            case 'monthly':
+            return <div>
+                <div className="donatepage__title">Give a Monthly Gift</div>
+                <div className="donatepage__subtitle">You can make a real difference, transforming the lives and the future we share.</div>
+                <p className="donatepage__paragraph">Your monthly support:</p>
+                <ul className="donatepage__list">
+                    <li>Provides reliable, stable funding which enables us to immediately respond to crises, and to develop long-term programs for superheroes around the world</li>
+                    <li>It has lower administrative costs and therefore can have a greater impact</li>
+                </ul>
+                <div className="donatepage__amount-conatiner">
+                    <button className="btn__active" value="30">$30</button>
+                    <button className="btn__dormant" value="40">$40</button>
+                    <button className="btn__dormant" value="50">$50</button>
+                    <button className="btn__dormant" value="75">$75</button>
+                </div>
+                <hr className="linebreak"></hr>
+            </div>;
+            case 'onetime':
+            return <div>
+                <div className="donatepage__title">Give a One-time Gift</div>
+                <div className="donatepage__subtitle">You can make a real difference, transforming the lives and the future we share.</div>
+                <p className="donatepage__paragraph">Your gift can:</p>
+                <ul className="donatepage__list">
+                    <li>Save lives with essential food, clean water, healthcare and medical treatment</li>
+                    <li>Give children an education and the chance to change their lives</li>
+                </ul>
+                <div className="donatepage__amount-conatiner">
+                    <button className="btn__active" value="30">$30</button>
+                    <button className="btn__dormant" value="50">$50</button>
+                    <button className="btn__dormant" value="75">$75</button>
+                    <button className="btn__dormant" value="100">$100</button>
+                </div>
+                <hr className="linebreak"></hr>
+            </div>;
+            default:
+            return null;
+        }
+    }
+
     render() {
-        return(
+        const { donateSelection } = this.state;
+        const { active } = this.state;
+
+        return (
             <>
+                <div className="container-fluid payment-btn-group">
+                <button outline className={donateSelection ==='monthly' ? 'btn__active' : 'btn__dormant'} color="secondary" value="monthly" onClick={this.toggleContent} >Monthly</button>
+                <button outline className={donateSelection ==='onetime' ? 'btn__active' : 'btn__dormant'} color="secondary" value="onetime" onClick={this.toggleContent} >One Time</button>
+                {this.switchContent(donateSelection)}
+                </div>
                 <div className="donatepage__title">Billing Information</div>
                 <form className="donatepage__billing-form">
                     <div className="donatepage__row-wrapper">
                         <div className="donatepage__billing-element">
-                            <label className="donatepage__billing-label" for="fname">First name:</label>
-                            <input className="donatepage__billing-item" type="text" id="fname" name="fname" />
+                            <label className="donatepage__billing-label" for="fname">First Name:</label>
+                            <input className="donatepage__billing-item" type="text" id="fname" name="fname" placeholder="John" />
                         </div>
                         <div className="donatepage__billing-element">
-                            <label className="donatepage__billing-label" for="lname">Last name:</label>
-                            <input className="donatepage__billing-item" type="text" id="lname" name="lname" />
+                            <label className="donatepage__billing-label" for="lname">Last Name:</label>
+                            <input className="donatepage__billing-item" type="text" id="lname" name="lname" placeholder="Doe" />
                         </div>
                     </div>
                     <div className="donatepage__billing-element">
                         <label className="donatepage__billing-label" for="email">Email:</label>
-                        <input className="donatepage__billing-item" type="text" id="email" name="email" />
+                        <input className="donatepage__billing-item" type="text" id="email" name="email" placeholder="johndoe@email.com" />
                     </div>
                     <div className="donatepage__billing-element">
                         <label className="donatepage__billing-label" for="country">Country:</label>
@@ -273,22 +341,45 @@ class DonateBilling extends Component{
                     </div>
                     <div className="donatepage__billing-element">
                         <label className="donatepage__billing-label" for="address">Address:</label>
-                        <input className="donatepage__billing-item" type="text" id="address" name="address" />
+                        <input className="donatepage__billing-item" type="text" id="address" name="address" placeholder="Address" />
                     </div>
                     <div className="donatepage__row-wrapper">
                         <div className="donatepage__billing-element">
                             <label className="donatepage__billing-label" for="city">City:</label>
-                            <input className="donatepage__billing-item" type="text" id="city" name="city" />
+                            <input className="donatepage__billing-item" type="text" id="city" name="city" placeholder="City" />
                         </div>
                         <div className="donatepage__billing-element">
                             <label className="donatepage__billing-label" for="postalcode">Postal Code:</label>
-                            <input className="donatepage__billing-item" type="text" id="postalcode" name="postalcode" />
+                            <input className="donatepage__billing-item" type="text" id="postalcode" name="postalcode" placeholder="Postal Code" />
                         </div>
                     </div>
+                    <hr className="linebreak"></hr>
+                    <div className="donatepage__title">Payment Information</div>
+                        <div className="donatepage__row-wrapper">
+                            <div className="donatepage__billing-element">
+                                <label className="donatepage__billing-label" for="chname">Card Holder Name:</label>
+                                <input className="donatepage__billing-item" type="text" id="chname" name="chname" placeholder="John Doe" />
+                            </div>
+                            <div className="donatepage__billing-element">
+                                <label className="donatepage__billing-label" for="cnumber">Card Number:</label>
+                                <input className="donatepage__billing-item" type="text" id="cnumber" name="cnumber" placeholder="xxxx-xxxx-xxxx-xxxx" />
+                            </div>
+                        </div>
+                        <div className="donatepage__row-wrapper">
+                            <div className="donatepage__billing-element">
+                                <label className="donatepage__billing-label" for="expirationdate">Expiration Date:</label>
+                                <input className="donatepage__billing-item" type="text" id="expirationdate" name="expirationdate" placeholder="MM/YY" />
+                            </div>
+                            <div className="donatepage__billing-element">
+                                <label className="donatepage__billing-label" for="securitycode">Security Code (CVV)</label>
+                                <input className="donatepage__billing-item" type="text" id="securitycode" name="securitycode" placeholder="###" />
+                            </div>
+                        </div>
+                        <input type="submit" value="Donate Now" className="btn__primary donatepage__btn"></input>
                 </form>
             </>
-        )
+        );
     }
 }
 
-export default DonateBilling;
+export default DonateInfo;
