@@ -1,0 +1,61 @@
+@import '../../styles/global.scss';
+
+.why{
+    margin: 0 auto;
+    text-align: center;
+    background-color: #1B313E;
+    color: #FFFFFF;
+    padding: 3.5rem 0;
+
+    &__header{
+        @include type('h2', 'phone', 600);
+        text-transform: uppercase;
+        margin-bottom: 4rem;
+        
+        @include breakpoint ('table') {
+            @include type('h2', 'table'); 
+        }
+    }
+
+    &__Item{
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        @include breakpoint('table'){
+            flex-direction: row;
+            margin-bottom: 3rem;
+        }
+
+        &--left{
+            @include breakpoint ('desktop') {
+                width: 30%;
+            }
+        }
+
+        &--right{
+            @include breakpoint ('desktop') {
+                width: 70%;
+            }
+        }
+
+        &-header{
+            @include type('h3', 'phone');
+            margin-bottom: 1rem;
+
+            @include breakpoint ('table') {
+                margin-bottom: 2rem;
+                @include type('h3', 'table'); 
+            }
+        }
+
+        &-text{
+            @include type('p', 'phone');
+
+            @include breakpoint ('table') {
+                @include type('p', 'table'); 
+            }
+        }
+    }
+}
