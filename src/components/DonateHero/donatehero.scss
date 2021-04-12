@@ -1,0 +1,30 @@
+@import '../../styles/global.scss';
+
+.donatehero{
+    padding: 10rem 0;
+    color: #FFFFFF;
+    background-image: linear-gradient(to right bottom, rgba(237, 29, 36, 0.85), 
+    rgba(237, 29, 36, 0.85)), url(../../assets/images/comicBookBg.jpg);
+    
+    &__content{
+        @include breakpoint ('table') {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__header{
+        max-width: 720px;
+        margin-bottom: 2rem;
+        @include type('h2', 'phone', 600);
+
+        @include breakpoint ('table') {
+            @include type('h2', 'table'); 
+        }
+    }
+
+    &__button{
+        height: 60px;
+    }
+}
