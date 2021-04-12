@@ -59,6 +59,13 @@ a {
         color: #1B313E;
         border: 2px solid #1B313E;
         background-color: transparent;
+        margin: 0 0.5rem;
+    }
+
+    &__dormant:hover{
+        background-color: #09212F;
+        cursor: pointer;
+        color: #FFFFFF;
     }
 }
 

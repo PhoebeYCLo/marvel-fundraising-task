@@ -31,6 +31,12 @@ class DonateButton extends Component{
                     <li>Provides reliable, stable funding which enables us to immediately respond to crises, and to develop long-term programs for superheroes around the world</li>
                     <li>It has lower administrative costs and therefore can have a greater impact</li>
                 </ul>
+                <div className="donatepage__amount-conatiner">
+                    <button className="btn__active" value="30">$30</button>
+                    <button className="btn__dormant" value="40">$40</button>
+                    <button className="btn__dormant" value="50">$50</button>
+                    <button className="btn__dormant" value="75">$75</button>
+                </div>
             </div>;
             case 'onetime':
             return <div>
@@ -41,6 +47,12 @@ class DonateButton extends Component{
                     <li>Save lives with essential food, clean water, healthcare and medical treatment</li>
                     <li>Give children an education and the chance to change their lives</li>
                 </ul>
+                <div className="donatepage__amount-conatiner">
+                    <button className="btn__active" value="30">$30</button>
+                    <button className="btn__dormant" value="50">$50</button>
+                    <button className="btn__dormant" value="75">$75</button>
+                    <button className="btn__dormant" value="100">$100</button>
+                </div>
             </div>;
             default:
             return null;
