@@ -3,7 +3,9 @@
 .why{
     margin: 0 auto;
     text-align: center;
-    background-color: #1B313E;
+    // background-color: #1B313E;
+    background-image: linear-gradient(to right bottom, rgba(27, 49, 62, 0.85), 
+    rgba(27, 49, 62, 0.85)), url(../../assets/images/comicBookBg.jpg);
     color: #FFFFFF;
     padding: 3.5rem 0;
 
