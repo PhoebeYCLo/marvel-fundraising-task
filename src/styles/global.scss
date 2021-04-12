@@ -23,3 +23,16 @@
         cursor: pointer;
     }
 }
+
+.container{
+    margin: 0 1rem;
+
+    @include breakpoint('desktop'){
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+.colored{
+    color: #EF3D23;
+}
