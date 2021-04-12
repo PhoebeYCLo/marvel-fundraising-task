@@ -24,11 +24,23 @@ class DonateButton extends Component{
         switch (value) {
             case 'monthly':
             return <div>
-                <p>Monthly Content Here</p>
+                <div className="donatepage__title">Give a Monthly Gift</div>
+                <div className="donatepage__subtitle">You can make a real difference, transforming the lives and the future we share.</div>
+                <p className="donatepage__paragraph">Your monthly support:</p>
+                <ul className="donatepage__list">
+                    <li>Provides reliable, stable funding which enables us to immediately respond to crises, and to develop long-term programs for superheroes around the world</li>
+                    <li>It has lower administrative costs and therefore can have a greater impact</li>
+                </ul>
             </div>;
             case 'onetime':
             return <div>
-                <p>One Time Content Here</p>
+                <div className="donatepage__title">Give a One-time Gift</div>
+                <div className="donatepage__subtitle">You can make a real difference, transforming the lives and the future we share.</div>
+                <p className="donatepage__paragraph">Your gift can:</p>
+                <ul className="donatepage__list">
+                    <li>Save lives with essential food, clean water, healthcare and medical treatment</li>
+                    <li>Give children an education and the chance to change their lives</li>
+                </ul>
             </div>;
             default:
             return null;

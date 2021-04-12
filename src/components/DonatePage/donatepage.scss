@@ -24,11 +24,37 @@
     &__top{
         &-header{
             text-transform: uppercase;
+            margin-bottom: 1rem;
             @include type('h2', 'phone', 600);
             
             @include breakpoint ('table') {
                 @include type('h2', 'table'); 
             }
         }
+    }
+
+    &__title{
+        text-transform: uppercase;
+        margin-top: 1rem;
+        @include type('h3', 'phone');
+        
+        @include breakpoint ('table') {
+            @include type('h3', 'table'); 
+        }
+    }
+
+    &__subtitle,
+    &__paragraph,
+    &__list{
+        margin: 0.8rem 0;
+        @include type('p', 'phone');
+            
+        @include breakpoint ('table') {
+            @include type('p', 'table'); 
+        }
+    }
+
+    &__list{
+        color: #353535;
     }
 }
